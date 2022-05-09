@@ -69,3 +69,41 @@ contract Kata {
   }
 }
 
+
+//Task 5
+// Clock shows h hours, m minutes and s seconds after midnight.
+// Your task is to write a function which returns the time since midnight in milliseconds.
+// Example:
+// h = 0
+// m = 1
+// s = 1
+// result = 61000
+
+contract Kata {
+  function past(int h, int m, int s) public pure returns (int) {
+    return h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000;
+  }
+}
+
+// Task 6
+// Create a function with two arguments that will return an array of the first (n) multiples of (x).
+// Assume both the given number and the number of times to count will be positive numbers greater than 0.
+// Return the results as an array (or list in Python, Haskell or Elixir).
+// Examples:
+// countBy(1,10) // should return [1,2,3,4,5,6,7,8,9,10]
+// countBy(2,5) // should return [2,4,6,8,10]
+
+contract CountByX {
+
+  function countBy(int x, int n) view returns (int[]) {
+    int[] z;
+    // TODO: Your code here
+    int tmpSum;
+    for (int i = 0; i < n; i++) {
+        tmpSum = x + tmpSum;
+        z.push(tmpSum);
+    }      
+    return z;
+  }
+}
+
